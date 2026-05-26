@@ -1,0 +1,108 @@
+/* ========================= */
+/* HERO ZOOM */
+/* ========================= */
+
+@keyframes heroZoom{
+
+    0%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(1.08);
+    }
+
+}
+
+/* ========================================= */
+/* LANGUAGE SWITCHER SLIDING PILL ANIMATION  */
+/* ========================================= */
+
+/* 1. Sembunyikan bendera secara default */
+.lang-btn .flag { 
+    display: none; 
+    margin-right: 8px !important; 
+    width: 16px !important;         
+    height: 16px !important;         
+    border-radius: 50% !important;   
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; 
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* 2. Tampilkan bendera HANYA di tombol yang aktif */
+.lang-btn.active .flag { 
+    display: inline-block !important; 
+}
+
+/* 3A. Gambar Bendera Indonesia (Gradient CSS) */
+.flag.flag-id {
+    background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%) !important;
+}
+
+/* 3B. Gambar Bendera US/English (Base64 Anti-Gagal) */
+.flag.flag-en {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxMiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmIi8+PGcgZmlsbD0iI2Q4MDAyNyI+PHJlY3QgeT0iMCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSIyIiB3aWR0aD0iMTYiIGhlaWdodD0iMSIvPjxyZWN0IHk9IjQiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxIi8+PHJlY3QgeT0iNiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjEiLz48cmVjdCB5PSI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMSIvPjxyZWN0IHk9IjEwIiB3aWR0aD0iMTYiIGhlaWdodD0iMSIvPjwvZz48cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI3IiBmaWxsPSIjMDA1MmI0Ii8+PC9zdmc+') !important;
+}
+
+/* 3. Styling dasar tombol bahasa */
+.lang-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Pastikan tombol ada di atas pil */
+}
+
+.lang-selector .lang-btn {
+    position: relative;
+    color: rgba(255, 255, 255, 0.6); /* Warna abu-abu saat tidak aktif */
+    background: transparent;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efek saat tombol di-hover tapi belum diklik */
+.lang-selector .lang-btn:not(.active):hover {
+    color: #ffffff;
+}
+
+/* Warna teks saat tombol aktif */
+.lang-selector .lang-btn.active {
+    color: #ffffff;
+}
+
+/* 4. Ini Pil Birunya (Dibuat pakai Pseudo-element) */
+.lang-selector::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: var(--pill-left, 0px); /* Akan diisi oleh JavaScript */
+    transform: translateY(-50%);
+    width: var(--pill-width, 0px); /* Akan diisi oleh JavaScript */
+    height: 100%;
+    background-color: #8cc63f; /* Biru Pertamina */
+    border-radius: 50px;
+    /* Transisi super cepat dan mulus (cubic-bezier) sesuai request */
+    transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+                width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1; /* Taruh pil di belakang teks */
+}
+
+/* 5. Separator (Garis pemisah |) */
+.lang-separator {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 2px;
+    font-weight: 300;
+}
+
+/* 6. Penyesuaian khusus untuk Mobile (Tanpa Pil) */
+.mobile-lang .lang-btn.active {
+    color: #00A2E9 !important;
+}

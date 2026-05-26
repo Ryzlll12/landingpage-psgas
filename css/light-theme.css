@@ -1,0 +1,156 @@
+/* ========================================= */
+/* LIGHT THEME OVERRIDES FULL V3             */
+/* ========================================= */
+
+body.light-mode {
+    background-color: #f8fbff;
+    color: #0b1320;
+}
+
+/* 1. BACKGROUND SECTION MENJADI TERANG */
+body.light-mode .about-section,
+body.light-mode .process-section,
+body.light-mode .fasilitas-section,
+body.light-mode .nilai-section,
+body.light-mode .hsse-section,
+body.light-mode .awards-section,
+body.light-mode .kontribusi-section,
+body.light-mode .ecosystem-section,
+body.light-mode .m3-section,
+body.light-mode .ops-banner-section {
+    background-color: #ffffff;
+}
+
+/* 2. WARNA JUDUL UTAMA SECTION (Gelap) */
+body.light-mode .section-title,
+body.light-mode .process-title,
+body.light-mode .fasilitas-title,
+body.light-mode .nilai-title,
+body.light-mode .m3-title,
+body.light-mode .aw-main-title,
+body.light-mode .k-title,
+body.light-mode .eco-title,
+body.light-mode .tl-content h3,
+body.light-mode .nc-title {
+    color: #0b1320;
+}
+
+/* 3. WARNA TEKS DESKRIPSI SECTION (Abu-abu gelap) */
+body.light-mode .about-short-desc,
+body.light-mode .about-long-desc p,
+body.light-mode .tl-content p,
+body.light-mode .nilai-desc,
+body.light-mode .nc-desc,
+body.light-mode .k-desc,
+body.light-mode .eco-desc,
+body.light-mode .hsse-desc {
+    color: #4b5563;
+}
+
+
+/* ========================================= */
+/* FIX: PROSES BISNIS (TIMELINE)             */
+/* ========================================= */
+body.light-mode .timeline-line { background-color: rgba(0, 0, 0, 0.15); }
+body.light-mode .tl-dot { background-color: #ffffff; }
+body.light-mode .process-section::before { opacity: 0.03; }
+
+
+/* ========================================= */
+/* FIX: FASILITAS (Teks Tetap Putih)         */
+/* ========================================= */
+body.light-mode .fac-name,
+body.light-mode .stat-value {
+    color: #ffffff !important;
+}
+body.light-mode .fac-desc,
+body.light-mode .fac-loc,
+body.light-mode .stat-label,
+body.light-mode .stat-label-only,
+body.light-mode .stat-value small {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+
+/* ========================================= */
+/* FIX: HSSE GOLDEN RULES                    */
+/* ========================================= */
+body.light-mode .hsse-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+body.light-mode .hc-content h3 { color: #0b1320 !important; }
+body.light-mode .hc-content p { color: #4b5563 !important; }
+
+
+/* ========================================= */
+/* FIX: MILESTONE V3 (Pencapaian)            */
+/* ========================================= */
+/* Timeline Navigasi Kiri */
+body.light-mode .m3-line { background-color: rgba(0, 0, 0, 0.15); }
+body.light-mode .m3-dot { background-color: #ffffff; border-color: rgba(0, 0, 0, 0.2); }
+body.light-mode .m3-year { color: rgba(11, 19, 32, 0.3); } /* Tahun redup */
+body.light-mode .m3-short-desc { color: #64748b; }
+
+/* Saat Aktif (Active) */
+body.light-mode .m3-nav-item.active .m3-dot { background-color: #ED1C24; border-color: #ED1C24; }
+body.light-mode .m3-nav-item.active .m3-year { color: #0b1320; } /* Tahun hitam pekat */
+body.light-mode .m3-nav-item.active .m3-short-desc { color: #ED1C24; }
+
+/* Teks Kanan */
+body.light-mode .m3-text-content h2 { color: #0b1320 !important; }
+body.light-mode .m3-text-content p { color: #4b5563 !important; }
+
+
+/* ========================================= */
+/* FIX: AWARDS (Penghargaan)                 */
+/* ========================================= */
+/* Kotak saat sedang tidak aktif (Inactive) */
+body.light-mode .aw-row {
+    background: #ffffff;
+    border: 1px solid #cbd5e1; 
+}
+
+/* Hover HANYA untuk kotak yang TIDAK aktif agar warna aslinya aman */
+body.light-mode .aw-row:not(.active):hover { 
+    background: #f1f5f9; 
+}
+
+/* Kembalikan Paksa Gradien Warna Pertamina untuk Kotak Aktif */
+body.light-mode .aw-row:nth-child(3n+1).active { background: linear-gradient(90deg, #ED1C24, #B21219) !important; }
+body.light-mode .aw-row:nth-child(3n+2).active { background: linear-gradient(90deg, #00A2E9, #00529B) !important; }
+body.light-mode .aw-row:nth-child(3n+3).active { background: linear-gradient(90deg, #8CC63F, #5A8722) !important; }
+
+/* Teks Inactive jadi Gelap */
+body.light-mode .aw-col-num, 
+body.light-mode .aw-col-inst { color: #64748b !important; } 
+body.light-mode .aw-col-title { color: #0f172a !important; } 
+
+/* Saat Kotak Aktif, Teks Kembali Putih */
+body.light-mode .aw-row.active .aw-col-num,
+body.light-mode .aw-row.active .aw-col-title,
+body.light-mode .aw-row.active .aw-col-inst,
+body.light-mode .aw-row.active .aw-row-desc p {
+    color: #ffffff !important;
+}
+
+
+/* ========================================= */
+/* FIX: EKOSISTEM & MITRA                    */
+/* ========================================= */
+body.light-mode .eco-card {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sedikit bayangan biar gak flat */
+}
+body.light-mode .eco-card h3 {
+    color: #0b1320 !important; /* Teks hitam */
+}
+
+
+/* ========================================= */
+/* PENYESUAIAN LAINNYA                       */
+/* ========================================= */
+body.light-mode .nilai-card { background: #f1f5f9; border-color: #e2e8f0; }
+body.light-mode .pertamina-footer { background-color: #041021; } /* Footer tetap gelap */
