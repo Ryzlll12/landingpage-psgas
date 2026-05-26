@@ -154,3 +154,49 @@ body.light-mode .eco-card h3 {
 /* ========================================= */
 body.light-mode .nilai-card { background: #f1f5f9; border-color: #e2e8f0; }
 body.light-mode .pertamina-footer { background-color: #041021; } /* Footer tetap gelap */
+
+/* ========================================= */
+/* FIX: HSSE GOLDEN RULES                    */
+/* ========================================= */
+body.light-mode .hsse-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+body.light-mode .hc-content h3 { color: #0b1320 !important; }
+body.light-mode .hc-content p { color: #4b5563 !important; }
+
+/* --- TAMBAHAN UNTUK FIX TEKS FOOTER HSSE --- */
+body.light-mode .hsse-footer {
+    background: #ffffff; /* Diganti jadi putih bersih agar sama dengan 3 kotak atasnya */
+    border-color: #e2e8f0; /* Warna garis pinggir disamakan */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Efek bayangan disamakan */
+}
+body.light-mode .hsse-footer p { 
+    color: #4b5563 !important; 
+}
+body.light-mode .hf-line {
+    background-color: #e2e8f0 !important; /* Warna garis pembatas ikon dan teks disamakan */
+}
+
+/* ========================================= */
+/* FIX: PROSES BISNIS (TIMELINE)             */
+/* ========================================= */
+body.light-mode .timeline-line { background-color: rgba(0, 0, 0, 0.15); }
+body.light-mode .tl-dot { background-color: #ffffff; }
+body.light-mode .process-section::before { opacity: 0.15; } /* Angka ini dinaikkan agar background foto terlihat */
+
+/* ========================================= */
+/* FIX: WARNA ANGKA INDIKATOR & GARIS TIPIS  */
+/* ========================================= */
+body.light-mode .indicator-column .number,
+body.light-mode .indicator-right .number,
+body.light-mode .indicator-left .number {
+    color: #0b1320 !important; /* Warna gelap pekat agar kontras */
+    font-weight: 700 !important; /* Ditebalkan sedikit biar makin jelas */
+}
+
+/* Garis abu-abu tipis di bawah angka 02 (Tentang Perusahaan) */
+body.light-mode .line-faint {
+    background-color: rgba(0, 0, 0, 0.15) !important; 
+}

@@ -2,10 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* Reset Basic */
+/* Reset Basic */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* --- TAMBAHKAN KODE INI BIAR SCROLL MULUS --- */
+html {
+    scroll-behavior: smooth; /* Bikin animasi scroll otomatis jadi halus */
+    scroll-padding-top: 100px; /* Jarak aman supaya judul section gak tertutup navbar */
 }
 
 /* Terapkan font baru ke seluruh elemen body */
@@ -144,7 +151,7 @@ body {
 #navbar.scrolled .lang-theme-selector {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     animation: fadeIn 0.4s ease-out; /* Saya tambahkan animasi biar munculnya mulus & elegan */
 }
 
@@ -165,7 +172,7 @@ body {
 }
 
 #navbar.scrolled .lang-btn.active {
-    color: #0b1320; /* Hitam pekat saat aktif */
+   color: #ffffff !important; /* Hitam pekat saat aktif */
 }
 
 #navbar.scrolled .lang-btn:hover {
@@ -175,7 +182,7 @@ body {
 .lang-selector {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px; /* <--- ASALNYA 15px, UBAH JADI 5px MAS */
     font-weight: bold;
 }
 
@@ -2854,4 +2861,9 @@ body {
     font-weight: 600;
     margin: 0;
     text-align: center;
+}
+
+/* Pastikan teks tombol bahasa selalu putih jika sedang aktif (berada di dalam kotak hijau) */
+#navbar.scrolled .lang-selector .lang-btn.active {
+    color: #ffffff !important; 
 }

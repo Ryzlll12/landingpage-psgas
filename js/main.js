@@ -1,8 +1,17 @@
 // Navbar
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
+    const isCurrentlyScrolled = navbar.classList.contains('scrolled');
+
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
+        
+        // Panggil fungsi kotak hijau tepat saat navbar putih muncul
+        if (!isCurrentlyScrolled) {
+            setTimeout(() => {
+                if (typeof moveLanguagePill === 'function') moveLanguagePill();
+            }, 50);
+        }
     } else {
         navbar.classList.remove('scrolled');
     }
