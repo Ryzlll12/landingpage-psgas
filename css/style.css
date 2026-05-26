@@ -2567,6 +2567,8 @@ body {
     width: 30px;
     height: 2px;
     background-color: #00A2E9; /* Biru Pertamina */
+    margin-left: 30px;
+    margin-top: 8px;
 }
 
 .k-title {

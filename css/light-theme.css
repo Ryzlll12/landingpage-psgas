@@ -200,3 +200,28 @@ body.light-mode .indicator-left .number {
 body.light-mode .line-faint {
     background-color: rgba(0, 0, 0, 0.15) !important; 
 }
+
+/* ========================================= */
+/* FIX: KONTRIBUSI (Teks & Tombol yg Hilang) */
+/* ========================================= */
+
+/* 1. Memunculkan teks judul di bawah thumbnail */
+body.light-mode .k-thumb h4 {
+    color: #0b1320 !important; /* Diubah jadi gelap */
+}
+
+/* 2. Memunculkan angka total ( / 06 ) di sebelah panah */
+body.light-mode .k-total-num {
+    color: #64748b !important; /* Diubah jadi abu-abu gelap */
+}
+
+/* 3. Memunculkan tombol panah kiri (Prev) yang transparan */
+body.light-mode .k-btn.k-prev {
+    color: #0b1320 !important; /* Icon panah jadi gelap */
+    border-color: #cbd5e1 !important; /* Garis pinggir jadi abu-abu */
+}
+
+/* Efek saat tombol panah kiri disentuh di light mode */
+body.light-mode .k-btn.k-prev:hover {
+    background: #f1f5f9 !important; 
+}
