@@ -319,6 +319,14 @@ html, body {
         margin-top: 0; 
         margin-bottom: 40px; 
     }
+
+    /* FIX: Memaksa elemen display:contents untuk langsung tampil di mobile tanpa nunggu di-scroll */
+.about-col-left.reveal,
+.about-col-right.reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
     
     .vm-wrapper { 
         order: 4; 
@@ -1539,5 +1547,33 @@ html, body {
     .advantage-item h3 {
         font-size: 1.4rem !important; 
         line-height: 1.4 !important;
+    }
+
+    .nav-right-group {
+        gap: 8px !important; 
+    }
+
+    /* 2. Rapatkan jarak antara Tombol Bahasa (Pill) dan Icon Matahari/Bulan */
+    .lang-theme-selector {
+        gap: 2px !important;
+    }
+
+    /* 3. Paksa timpa margin-left 15px dari inline HTML di tombol tema */
+    .theme-toggle-btn {
+        margin-left: 5px !important; 
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* 4. Kecilkan ukuran logo biar aman di layar HP kecil */
+    .nav-logo img {
+        height: 25px !important; /* Aslinya 35px, kita kecilin lagi */
+        width: auto !important;
+        max-width: 150px !important; /* Cegah logo kepanjangan */
+    }
+
+    /* 5. Kurangi padding navbar sedikit biar ruangnya lebih lega */
+    .nav-container {
+        padding: 15px 3% !important; 
     }
 }
