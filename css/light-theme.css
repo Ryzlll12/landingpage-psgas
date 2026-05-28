@@ -103,38 +103,65 @@ body.light-mode .m3-text-content h2 { color: #0b1320 !important; }
 body.light-mode .m3-text-content p { color: #4b5563 !important; }
 
 
+//* ========================================= */
+/* FIX: AWARDS SLIDER V2 (Light Theme)       */
 /* ========================================= */
-/* FIX: AWARDS (Penghargaan)                 */
-/* ========================================= */
-/* Kotak saat sedang tidak aktif (Inactive) */
-body.light-mode .aw-row {
-    background: #ffffff;
-    border: 1px solid #cbd5e1; 
+
+/* 1. Background Utama */
+body.light-mode .award-slider-section {
+    background-color: #f8fbff;
 }
 
-/* Hover HANYA untuk kotak yang TIDAK aktif agar warna aslinya aman */
-body.light-mode .aw-row:not(.active):hover { 
-    background: #f1f5f9; 
+/* 2. Ubah Overlay Layar dari Gelap menjadi Terang/Putih Transparan */
+body.light-mode .as-overlay {
+    background: linear-gradient(to right, rgba(248, 251, 255, 0.95) 10%, rgba(248, 251, 255, 0.8) 50%, rgba(248, 251, 255, 0.3) 100%);
 }
 
-/* Kembalikan Paksa Gradien Warna Pertamina untuk Kotak Aktif */
-body.light-mode .aw-row:nth-child(3n+1).active { background: linear-gradient(90deg, #ED1C24, #B21219) !important; }
-body.light-mode .aw-row:nth-child(3n+2).active { background: linear-gradient(90deg, #00A2E9, #00529B) !important; }
-body.light-mode .aw-row:nth-child(3n+3).active { background: linear-gradient(90deg, #8CC63F, #5A8722) !important; }
+/* 3. Teks Judul dan Deskripsi Kiri menjadi Gelap */
+body.light-mode .as-title {
+    color: #0b1320 !important; 
+}
+body.light-mode .as-desc {
+    color: #4b5563 !important; 
+}
 
-/* Teks Inactive jadi Gelap */
-body.light-mode .aw-col-num, 
-body.light-mode .aw-col-inst { color: #64748b !important; } 
-body.light-mode .aw-col-title { color: #0f172a !important; } 
-
-/* Saat Kotak Aktif, Teks Kembali Putih */
-body.light-mode .aw-row.active .aw-col-num,
-body.light-mode .aw-row.active .aw-col-title,
-body.light-mode .aw-row.active .aw-col-inst,
-body.light-mode .aw-row.active .aw-row-desc p {
+/* 4. Tombol Panah (Prev/Next) */
+body.light-mode .as-btn {
+    border-color: rgba(11, 19, 32, 0.3) !important;
+    color: #0b1320 !important;
+}
+body.light-mode .as-btn:hover {
+    background-color: #00A2E9 !important; /* Saat di-hover tetap biru Pertamina */
+    border-color: #00A2E9 !important;
     color: #ffffff !important;
 }
 
+/* 5. Desain Kartu (Cards) Sertifikat */
+body.light-mode .as-card {
+    border-color: rgba(11, 19, 32, 0.1) !important;
+}
+body.light-mode .as-card.active {
+    border-color: rgba(11, 19, 32, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important; /* Bayangan dikurangi intensitasnya */
+}
+
+body.light-mode .as-card img {
+    background-color: rgba(0, 0, 0, 0.03) !important; /* Latar di belakang sertifikat jadi abu-abu muda */
+}
+
+/* Ubah gradien bawah kartu jadi putih agar teks gelap terbaca */
+body.light-mode .as-card-overlay {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.1) 60%) !important;
+}
+
+body.light-mode .as-card-text h4 {
+    color: #0b1320 !important; /* Teks judul sertifikat jadi gelap */
+}
+
+/* 6. Angka Indikator Raksasa di Kanan Bawah */
+body.light-mode .as-counter {
+    color: rgba(11, 19, 32, 0.08) !important; /* Abu-abu tipis transparan */
+}
 
 /* ========================================= */
 /* FIX: EKOSISTEM & MITRA                    */

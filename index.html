@@ -726,79 +726,36 @@
         </div>
     </section>
 
-    <section class="awards-section reveal fade-up" id="awards">
-        <div class="aw-header-container">
-            <div class="aw-header-text">
-                <h2 class="aw-main-title" data-i18n="aw_title">PENGHARGAAN</h2>
-                <p class="aw-sub-title" data-i18n="aw_sub">PENGHARGAAN & PENGAKUAN ATAS KEUNGGULAN OPERASIONAL PERSEROAN</p>
+    <section class="award-slider-section" id="awards">
+        <!-- Background Gambar Besar -->
+        <div class="as-background">
+            <img src="" id="as-bg-img" alt="Background Penghargaan">
+            <div class="as-overlay"></div>
+        </div>
+
+        <div class="as-container">
+            <!-- Bagian Kiri: Teks -->
+            <div class="as-text-area">
+                <span class="as-subtitle" data-i18n="aw_sub">PENGHARGAAN & PENGAKUAN</span>
+                <h2 class="as-title" id="as-title">Memuat...</h2>
+                <p class="as-desc" id="as-desc">Memuat deskripsi penghargaan...</p>
+                
+                <div class="as-controls">
+                    <button class="as-btn" onclick="prevAward()" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+                    <button class="as-btn" onclick="nextAward()" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Bagian Kanan: Carousel Card -->
+            <div class="as-carousel-area" id="as-scroll-area">
+                <div class="as-track" id="as-track">
+                    <!-- Kotak-kotak (Cards) akan otomatis dimunculkan oleh JavaScript di sini -->
+                </div>
             </div>
         </div>
 
-        <div class="aw-content-wrapper">
-            <div class="aw-left">
-                <div class="aw-image-container">
-                    <div class="aw-dynamic-glow" id="awardGlow" style="background: radial-gradient(circle, rgba(140, 198, 63, 0.4) 0%, transparent 70%);"></div>
-                    <img src="assets/images/penghargaan/penghargaan-2.png" alt="Award Image" id="awardImage">
-                </div>
-            </div>
-
-            <div class="aw-right">
-                <div class="aw-row active" data-image="assets/images/penghargaan/penghargaan-2.png" data-glow="rgba(237, 28, 36, 0.4)"> 
-                    <div class="aw-row-top">
-                        <div class="aw-col-num">AWARDS / 01</div>
-                        <div class="aw-col-title">PROPER HIJAU</div>
-                        <div class="aw-col-inst">KEMENTERIAN LHK RI</div>
-                    </div>
-                    <div class="aw-row-desc">
-                        <p data-i18n="aw_1_d">Komitmen pengelolaan lingkungan yang unggul dan berkelanjutan di seluruh area operasional.</p>
-                    </div>
-                </div>
-
-                <div class="aw-row" data-image="assets/images/penghargaan/penghargaan-2.png" data-glow="rgba(0, 162, 233, 0.4)"> 
-                    <div class="aw-row-top">
-                        <div class="aw-col-num">AWARDS / 02</div>
-                        <div class="aw-col-title">PATRA NIRBAYA KARYA MADYA</div>
-                        <div class="aw-col-inst">KEMENTERIAN ESDM RI</div>
-                    </div>
-                    <div class="aw-row-desc">
-                        <p data-i18n="aw_2_d">Penghargaan keselamatan kerja atas kinerja jam kerja aman yang konsisten.</p>
-                    </div>
-                </div>
-
-                <div class="aw-row" data-image="assets/images/penghargaan/penghargaan-3.png" data-glow="rgba(140, 198, 63, 0.4)"> 
-                    <div class="aw-row-top">
-                        <div class="aw-col-num">AWARDS / 03</div>
-                        <div class="aw-col-title">SMK3 GOLD</div>
-                        <div class="aw-col-inst">KEMNAKER RI</div>
-                    </div>
-                    <div class="aw-row-desc">
-                        <p data-i18n="aw_3_d">Sertifikasi Sistem Manajemen K3 level Gold — standar keselamatan kerja tertinggi.</p>
-                    </div>
-                </div>
-
-                <div class="aw-row" data-image="assets/images/penghargaan/penghargaan-4.jpeg" data-glow="rgba(237, 28, 36, 0.4)"> 
-                    <div class="aw-row-top">
-                        <div class="aw-col-num">AWARDS / 04</div>
-                        <div class="aw-col-title">PROPER BIRU</div>
-                        <div class="aw-col-inst">KEMNAKER RI</div>
-                    </div>
-                    <div class="aw-row-desc">
-                        <p data-i18n="aw_4_d">Penilaian kepatuhan lingkungan berkelanjutan yang diakui pemerintah.</p>
-                    </div>
-                </div>
-
-                <div class="aw-row" data-image="assets/images/penghargaan/penghargaan-2.png" data-glow="rgba(0, 162, 233, 0.4)"> 
-                    <div class="aw-row-top">
-                        <div class="aw-col-num">AWARDS / 05</div>
-                        <div class="aw-col-title">PENGHARGAAN ENERGI</div>
-                        <div class="aw-col-inst">KEMENTERIAN ESDM RI</div>
-                    </div>
-                    <div class="aw-row-desc">
-                        <p data-i18n="aw_5_d">Pengakuan atas kontribusi nyata dalam ketahanan dan efisiensi energi nasional.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Angka Indikator di Pojok Kanan Bawah -->
+        <div class="as-counter" id="as-counter">01</div>
     </section>
 
     <section id="kontribusi" class="kontribusi-section">

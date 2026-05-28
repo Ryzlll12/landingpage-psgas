@@ -222,38 +222,185 @@ advantageItems.forEach((item) => {
 });
 
 /* ========================= */
-/* AWARDS SECTION LOGIC */
+/* AWARDS SLIDER (VIDEO STYLE) */
 /* ========================= */
-const awardRows = document.querySelectorAll('.aw-row');
-const awardImage = document.getElementById('awardImage');
-const awardGlow = document.getElementById('awardGlow');
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Data 11 Penghargaan
+    const awardsData = [
+        {
+            title: "Program Kampung Iklim Sumatera Selatan",
+            desc: "Penghargaan Program Kampung Iklim sebagai pengakuan kontribusi pengelolaan lingkungan dan iklim.",
+            cardImg: "assets/images/penghargaan/certificate-1.jpeg", // Ganti dengan path foto sertifikat
+            bgImg: "assets/images/penghargaan/bg-1.png"       // Ganti dengan path foto background
+        },
+        {
+            title: "Bantuan Angkutan Sampah",
+            desc: "Sertifikat penghargaan atas program bantuan angkutan sampah di sekitar area operasional.",
+            cardImg: "assets/images/penghargaan/certificate-2.jpeg",
+            bgImg: "assets/images/penghargaan/bg-2.png"
+        },
+        {
+            title: "Community Development",
+            desc: "Sertifikat pengakuan kegiatan pengembangan masyarakat dan tanggung jawab sosial perusahaan.",
+            cardImg: "assets/images/penghargaan/certificate-3.jpeg",
+            bgImg: "assets/images/penghargaan/bg-3.png"
+        },
+        {
+            title: "Ecosystem Protection",
+            desc: "Sertifikat atas komitmen perlindungan ekosistem dan lingkungan di wilayah operasi.",
+            cardImg: "assets/images/penghargaan/certificate-4.jpeg",
+            bgImg: "assets/images/penghargaan/bg-4.png"
+        },
+        {
+            title: "Hari Peduli Sampah",
+            desc: "Sertifikat keikutsertaan dan dukungan program Hari Peduli Sampah Nasional.",
+            cardImg: "assets/images/penghargaan/certificate-5.jpeg",
+            bgImg: "assets/images/penghargaan/bg-5.png"
+        },
+        {
+            title: "Keselamatan Minyak dan Gas Bumi",
+            desc: "Sertifikat keselamatan operasi minyak dan gas bumi di fasilitas pengolahan gas.",
+            cardImg: "assets/images/penghargaan/certificate-6.jpeg",
+            bgImg: "assets/images/penghargaan/bg-6.png"
+        },
+        {
+            title: "ISO 9001",
+            desc: "Sertifikasi ISO 9001 — sistem manajemen mutu terstandar internasional.",
+            cardImg: "assets/images/penghargaan/certificate-7.jpg",
+            bgImg: "assets/images/penghargaan/bg-7.png"
+        },
+        {
+            title: "ISO 14001",
+            desc: "Sertifikasi ISO 14001 — sistem manajemen lingkungan berkelanjutan.",
+            cardImg: "assets/images/penghargaan/certificate-8.jpg",
+            bgImg: "assets/images/penghargaan/bg-8.png"
+        },
+        {
+            title: "ISO 45001",
+            desc: "Sertifikasi sistem manajemen keselamatan dan kesehatan kerja (K3).",
+            cardImg: "assets/images/penghargaan/certificate-9.jpeg",
+            bgImg: "assets/images/penghargaan/bg-9.png"
+        },
+        {
+            title: "Akreditasi",
+            desc: "Sertifikat akreditasi atas standar operasional dan pengelolaan fasilitas perusahaan.",
+            cardImg: "assets/images/penghargaan/certificate-10.jpeg",
+            bgImg: "assets/images/penghargaan/bg-10.png"
+        },
+        {
+            title: "Sistem Manajemen Kesehatan Kerja",
+            desc: "Sertifikat sistem manajemen dan kesehatan kerja di lingkungan operasional Perseroan.",
+            cardImg: "assets/images/penghargaan/certificate-11.jpeg",
+            bgImg: "assets/images/penghargaan/bg-11.png"
+        }
+    ];
 
-awardRows.forEach((row) => {
-    row.addEventListener('mouseenter', () => {
-        // 1. Hapus class active dari semua
-        awardRows.forEach((el) => {
-            el.classList.remove('active');
+    const track = document.getElementById('as-track');
+    const bgImg = document.getElementById('as-bg-img');
+    const titleEl = document.getElementById('as-title');
+    const descEl = document.getElementById('as-desc');
+    const counterEl = document.getElementById('as-counter');
+    const scrollArea = document.getElementById('as-scroll-area');
+    
+    if(!track) return;
+
+    let currentAwardIndex = 0;
+
+    // 2. Generate Kotak (Cards) ke dalam HTML
+    awardsData.forEach((award, index) => {
+        const card = document.createElement('div');
+        card.className = `as-card ${index === 0 ? 'active' : ''}`;
+        card.setAttribute('data-index', index);
+        card.innerHTML = `
+            <img src="${award.cardImg}" alt="${award.title}">
+            <div class="as-card-overlay"></div>
+            <div class="as-card-text">
+                <h4>${award.title}</h4>
+            </div>
+        `;
+        
+        // Fungsi klik pada Card
+        card.addEventListener('click', () => {
+            updateAwardDisplay(index);
         });
 
-        // 2. Tambah class active ke yang disentuh
-        row.classList.add('active');
+        track.appendChild(card);
+    });
 
-        // 3. Animasi Gambar ngilang bentar
-        awardImage.style.opacity = '0';
-        awardImage.style.transform = 'translate(-50%, -50%) scale(0.95)';
+    const cards = document.querySelectorAll('.as-card');
+
+    // 3. Fungsi Update Tampilan (Teks & Background)
+    window.updateAwardDisplay = function(index) {
+        // FIX MASALAH 1: Pastikan looping kembali ke 1 (atau mundur ke 11) jalan lancar
+        if(index < 0) {
+            index = awardsData.length - 1;
+        } else if(index >= awardsData.length) {
+            index = 0;
+        }
+        
+        currentAwardIndex = index;
+        const data = awardsData[currentAwardIndex];
+
+        // Efek Pudar Background
+        bgImg.style.opacity = 0;
+        titleEl.style.opacity = 0;
+        descEl.style.opacity = 0;
 
         setTimeout(() => {
-            // Ganti Source Gambar
-            awardImage.src = row.getAttribute('data-image');
+            bgImg.src = data.bgImg;
+            titleEl.innerText = data.title;
+            descEl.innerText = data.desc;
+            counterEl.innerText = (currentAwardIndex + 1).toString().padStart(2, '0');
             
-            // Ganti Warna Cahaya Background
-            const newGlow = row.getAttribute('data-glow');
-            awardGlow.style.background = `radial-gradient(circle, ${newGlow} 0%, transparent 70%)`;
+            bgImg.style.opacity = 1;
+            titleEl.style.opacity = 1;
+            descEl.style.opacity = 1;
+        }, 300);
 
-            // Munculin lagi gambarnya
-            awardImage.style.opacity = '1';
-            awardImage.style.transform = 'translate(-50%, -50%) scale(1)';
-        }, 300); // Delay dikit biar smooth
+        // Update Class Active pada Card
+        cards.forEach((c, i) => {
+            c.classList.toggle('active', i === currentAwardIndex);
+        });
+
+        // FIX MASALAH 3 (NGUMPET DI KIRI): 
+        // Rumus Anti Kebablasan - Hitung jarak murni antara kartu dengan wadah tempat dia berada
+        const activeCard = cards[currentAwardIndex];
+        const offsetKiriTrack = track.getBoundingClientRect().left;
+        const offsetKiriKartu = activeCard.getBoundingClientRect().left;
+        
+        // Hasilnya dikurangi 30px biar ada sedikit ruang / bantalan di sisi kiri
+        const scrollTarget = (offsetKiriKartu - offsetKiriTrack) - 30; 
+        
+        scrollArea.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+
+        // Reset timer auto-play setiap kali slide berganti
+        resetAwardTimer();
+    };
+
+    // Fungsi Tombol Prev & Next
+    window.nextAward = function() { updateAwardDisplay(currentAwardIndex + 1); };
+    window.prevAward = function() { updateAwardDisplay(currentAwardIndex - 1); };
+
+    // Inisialisasi awal
+    updateAwardDisplay(0);
+
+    // 4. Fungsi Drag/Geser dengan Mouse (Opsional, biar makin mirip video)
+    let isDown = false;
+    let startX, scrollLeft;
+
+    scrollArea.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - scrollArea.offsetLeft;
+        scrollLeft = scrollArea.scrollLeft;
+    });
+    scrollArea.addEventListener('mouseleave', () => isDown = false);
+    scrollArea.addEventListener('mouseup', () => isDown = false);
+    scrollArea.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollArea.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollArea.scrollLeft = scrollLeft - walk;
     });
 });
 
