@@ -225,3 +225,15 @@ body.light-mode .k-btn.k-prev {
 body.light-mode .k-btn.k-prev:hover {
     background: #f1f5f9 !important; 
 }
+
+body.light-mode .k-subtitle {
+    color: #0b1320 !important; /* Warna gelap agar kontras */
+    font-weight: 700 !important;
+}
+
+/* FIX TEKS SUBTITLE KONTRIBUSI AGAR TIDAK HILANG DI LIGHT MODE */
+body.light-mode .kontribusi-section .k-subtitle,
+body.light-mode .kontribusi-section .indicator-left .number {
+    color: #0b1320 !important; /* Warna gelap */
+    font-weight: 700 !important;
+}

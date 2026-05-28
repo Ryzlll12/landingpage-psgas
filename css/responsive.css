@@ -229,6 +229,62 @@ html, body {
         height: 50px !important; /* Aslinya 70px, kita kecilin dikit di layar nanggung */
         width: auto !important;
     }
+
+    /* ========================================= */
+    /* FIX PENGHARGAAN (AWARDS) UNTUK IPAD PRO   */
+    /* ========================================= */
+    
+    /* 1. Ubah layout jadi numpuk atas-bawah */
+    .aw-content-wrapper {
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+
+    /* 2. Area gambar dibikin full width dengan tinggi fix */
+    .aw-left {
+        width: 100% !important;
+        height: 380px !important; /* Tinggi area gambar */
+        padding: 0 !important; 
+        background: transparent !important; 
+        display: block !important;
+    }
+
+    /* 3. Wadah sertifikat menyesuaikan area, hapus rasio desktop */
+    .aw-image-container {
+        width: 100% !important;
+        height: 100% !important;
+        padding-top: 0 !important; /* Hapus padding 120% bawaan desktop */
+        position: relative !important; 
+    }
+
+    /* 4. Area List Penghargaan dibikin full width ke bawah */
+    .aw-right {
+        width: 100% !important;
+    }
+
+    /* ========================================= */
+    /* FIX PENGHARGAAN (AWARDS) UNTUK IPAD PRO   */
+    /* ========================================= */
+    .aw-content-wrapper {
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+    .aw-left {
+        width: 100% !important;
+        height: 380px !important;
+        padding: 0 !important; 
+        background: transparent !important; 
+        display: block !important;
+    }
+    .aw-image-container {
+        width: 100% !important;
+        height: 100% !important;
+        padding-top: 0 !important; 
+        position: relative !important; 
+    }
+    .aw-right {
+        width: 100% !important;
+    }
 }
 
 /* ========================================= */
@@ -663,6 +719,36 @@ html, body {
         .ob-text p {
             max-width: 90% !important; 
         }
+
+        /* ========================================= */
+    /* FIX: HEADER KONTRIBUSI (SEJAJAR 07 & GARIS) */
+    /* ========================================= */
+    
+    /* 1. Paksa bungkus angka 07 jadi sebaris (inline) */
+    .kontribusi-section .indicator-left {
+        position: static !important;
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        vertical-align: middle !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 2. Paksa teks dan garis biru nempel sejajar di kanan 07 */
+    .kontribusi-section .k-subtitle {
+        display: inline-flex !important;
+        align-items: center !important;
+        vertical-align: middle !important;
+        margin-bottom: 15px !important;
+        margin-left: 15px !important; /* Jarak antara 07 dan garis biru */
+        gap: 15px !important;
+    }
+
+    /* 3. Reset dorongan (margin) bawaan desktop agar garis sejajar */
+    .kontribusi-section .k-line {
+        margin-left: 0 !important; 
+        margin-top: 0 !important;
+    }
 }
 
 /* ========================================= */
@@ -1374,6 +1460,76 @@ html, body {
         .nav-menu li a {
             font-size: 18px !important; 
         }
+
+        /* ========================================= */
+    /* FIX INDIKATOR 03 & 04 (KHUSUS MOBILE/HP)  */
+    /* ========================================= */
+    
+    /* 1. Paksa bungkus angka dan garis jadi numpuk atas-bawah */
+    .indicator-left, 
+    .indicator-right {
+        display: flex !important;
+        flex-direction: column !important; 
+        gap: 8px !important;
+    }
+
+    /* 2. Pastikan 04 merapat ke kiri, dan 03 merapat ke kanan */
+    .indicator-left, 
+    .indicator-right {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important; /* INI KUNCINYA BIAR GARIS KE TENGAH ANGKA */
+        gap: 8px !important;
+    }
+
+    /* 3. Kembalikan bentuk garis jadi vertikal (lurus ke bawah) */
+    .line-red-top {
+        width: 2px !important; 
+        height: 40px !important; 
+        display: block !important;
+    }
+
+    /* ========================================= */
+    /* FIX INDIKATOR 06 (PINDAH KANAN & NAIK)    */
+    /* ========================================= */
+    
+    /* 1. Tarik semua teks ke kiri (hapus jarak kosong bawaan desktop) */
+    .nilai-left {
+        padding-left: 0 !important; 
+    }
+
+    /* 2. Beri sedikit ruang di kanan agar teks tidak menabrak angka 06 */
+/* ========================================= */
+    /* FIX INDIKATOR 06 (PINDAH KANAN & NAIK)    */
+    /* ========================================= */
+    
+    .nilai-left {
+        padding-left: 0 !important; 
+    }
+
+    .nilai-header {
+        position: relative !important;
+        padding-right: 40px !important; 
+    }
+
+    .nilai-header .indicator-left {
+        position: absolute !important;
+        right: 0 !important;         
+        left: auto !important;       
+        top: 0 !important;           
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;  /* DIUBAH JADI CENTER JUGA */
+        gap: 8px !important;
+    }
+
+    .nilai-header .line-red-top {
+        width: 2px !important;
+        height: 40px !important;
+        display: block !important;
+    }
+
+    
 }
 
 
