@@ -1263,6 +1263,95 @@ html, body {
         gap: 8
     }
 
+    /* ========================================= */
+    /* FIX AWARDS SLIDER: KEMBALIKAN KE SLIDER (MOBILE) */
+    /* ========================================= */
+    
+    .award-slider-section {
+        height: auto !important; 
+        min-height: auto !important;
+        padding-bottom: 60px !important;
+    }
+
+    /* 1. Kembalikan fungsi geser samping (slider) */
+    .as-carousel-area {
+        width: 100% !important;
+        overflow-x: auto !important; /* Nyalakan lagi fungsi gesernya */
+        padding-bottom: 20px !important;
+        
+        /* Sembunyikan scrollbar bawah biar estetik */
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+    }
+    .as-carousel-area::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 2. Jejerkan kartu ke samping lagi */
+    .as-track {
+        display: flex !important;
+        flex-direction: row !important; 
+        gap: 15px !important; 
+        padding-right: 5vw !important; /* Ruang sisa di ujung kanan */
+    }
+
+    /* 3. Atur ukuran kartu jadi KOTAK LANDSCAPE PAS 1 LAYAR */
+    .as-card {
+        min-width: 75vw !important; 
+        width: 45vw !important;
+        height: 180px !important; 
+        margin: 0 !important;
+        padding: 0 !important; /* Pastikan nol agar tidak ada bug dorongan */
+        opacity: 0.5 !important; 
+        transform: scale(0.9) !important;
+        transition: all 0.4s ease !important;
+        background: rgba(255, 255, 255, 0.05) !important; /* Latar pindah ke kotak */
+        
+        /* Tambahan agar gambar persis di tengah */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Efek menyala & membesar untuk kartu yang aktif di tengah */
+    .as-card.active {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+    }
+
+    /* 4. JURUS ANTI POTONG: Pakai Persentase, Bukan Padding */
+    .as-card img {
+        width: 90% !important;  /* Menyisakan 5% ruang kosong di kiri & kanan */
+        height: 85% !important; /* Menyisakan ruang kosong di atas & bawah */
+        object-fit: contain !important; /* Tampilkan utuh tanpa zoom */
+        padding: 0 !important; /* Hapus padding yang sering bikin bug meluber di HP */
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* 5. Munculkan kembali tombol panah */
+    .as-controls {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* 6. Rapikan posisi teks di kartu */
+    .as-card-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%) !important;
+    }
+    .as-card-text {
+        bottom: 15px !important;
+    }
+
+
+    /* ========================================= */
+    /* FIX KONTRIBUSI: SEMBUNYIKAN PARAGRAF DI HP*/
+    /* ========================================= */
+    
+    /* 1. Sembunyikan teks paragraf agar gambar tidak tertutup */
     .kontribusi-section {
         margin-top: -2px !important; /* Menutup celah garis putih (1px bug) */
         padding-top: 50px !important; /* Memangkas jarak atas dari 100px menjadi 50px agar lebih naik */
@@ -1270,11 +1359,6 @@ html, body {
         z-index: 2; /* Memastikan section ini menumpuk rapi di atas section Awards */
     }
 
-    /* ========================================= */
-    /* FIX KONTRIBUSI: SEMBUNYIKAN PARAGRAF DI HP*/
-    /* ========================================= */
-    
-    /* 1. Sembunyikan teks paragraf agar gambar tidak tertutup */
     .k-display-text p {
         display: none !important;
     }
