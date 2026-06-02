@@ -264,3 +264,63 @@ body.light-mode .kontribusi-section .indicator-left .number {
     color: #0b1320 !important; /* Warna gelap */
     font-weight: 700 !important;
 }
+
+/* ========================================= */
+/* FIX: VISI, MISI, & TUJUAN (LIGHT THEME)   */
+/* ========================================= */
+
+/* 1. Ubah warna judul utama "VISI DAN MISI" agar terbaca (Warna Gelap) */
+body.light-mode .vm-group:nth-child(1) .vm-section-title {
+    color: #8CC63F!important; 
+}
+
+/* 2. Ubah warna judul "TUJUAN & MAKSUD PERSEROAN" menjadi MERAH Pertamina */
+body.light-mode .vm-group:nth-child(2) .vm-section-title {
+    color: #ED1C24 !important; 
+}
+
+/* ========================================= */
+/* FIX: DEWAN DIREKSI (LIGHT THEME)          */
+/* ========================================= */
+
+/* Kotak jajaran genjang menjadi putih bersih dengan bayangan lembut */
+body.light-mode .dir-slanted-bg {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* Pola titik-titiknya berubah menjadi abu-abu transparan */
+body.light-mode .dir-slanted-bg::before {
+    background-image: radial-gradient(rgba(0,0,0,0.08) 1.5px, transparent 1.5px);
+}
+
+/* Teks Nama menjadi gelap */
+body.light-mode .dir-name {
+    color: #ffffff !important;
+}
+
+/* Teks Jabatan menjadi abu-abu gelap */
+body.light-mode .dir-title {
+    color: #64748b !important;
+}
+
+body.light-mode .a-dot {
+    background: rgba(0, 0, 0, 0.15) !important; /* Titik yang belum aktif jadi abu-abu */
+    border-color: transparent !important;
+}
+
+body.light-mode .a-dot.active {
+    background: #ED1C24 !important; /* Titik yang aktif tetap merah Pertamina */
+    border-color: rgba(237, 28, 36, 0.3) !important;
+}
+
+body.light-mode .fac-timeline-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 20px;
+    width: 1px;
+    /* Ganti warna jadi abu-abu gelap agar terlihat jelas di latar putih */
+    background-color: rgba(0, 0, 0, 0.2) !important; 
+}

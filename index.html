@@ -108,105 +108,170 @@
         </div>
     </header>
 
-    <section id="about" class="about-section">
-        <div class="about-container">
+    <section id="about" class="about-section" style="position: relative;">
+        
+        <!-- 1. TITIK NAVIGASI SLIDER -->
+        <div class="about-dots-nav">
+            <div class="a-dot active" onclick="switchAboutSlide(0)"></div>
+            <div class="a-dot" onclick="switchAboutSlide(1)"></div>
+        </div>
+
+        <div class="about-slider-track" id="about-track">
             
-            <div class="about-col-left">
-                <div class="indicator-column">
-                    <span class="line-red"></span>
-                    <span class="number">02</span>
-                    <span class="line-faint"></span>
-                </div>
-
-                <div class="content-column">
+            <!-- ============================================== -->
+            <!-- SLIDE 1: TENTANG PERUSAHAAN (KODE ASLI MAS)    -->
+            <!-- ============================================== -->
+            <div class="about-slide-item active">
+                <div class="about-container">
                     
-                    <div class="about-header reveal fade-up">
-                        <h4 class="section-subtitle" data-i18n="about_sub">TENTANG PERUSAHAAN</h4>
-                        <h2 class="section-title">PT Perta Samtan Gas</h2>
-                        <p class="about-short-desc" data-i18n="about_short">Perusahaan pengolahan gas bumi terintegrasi yang berkomitmen mendukung ketahanan energi nasional secara berkelanjutan.</p>
-                    </div>
+                    <div class="about-col-left">
+                        <div class="indicator-column">
+                            <span class="line-red"></span>
+                            <span class="number">02</span>
+                            <span class="line-faint"></span>
+                        </div>
 
-                    <div class="vm-wrapper reveal fade-up delay-100">
-                        <div class="vm-group">
-                            <h4 class="vm-section-title" data-i18n="about_visimisi">VISI DAN MISI</h4> 
-                            
-                            <div class="vm-grid">
-                                <div class="vm-card">
-                                    <div class="vm-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="vm-text">
-                                        <h5 data-i18n="about_visi_title">VISI</h5>
-                                        <p data-i18n="about_visi_desc">Menjadi Perseroan Terkemuka di Dunia dalam Industri LPG & Gas</p>
+                        <div class="content-column">
+                            <div class="about-header reveal fade-up">
+                                <h4 class="section-subtitle" data-i18n="about_sub">TENTANG PERUSAHAAN</h4>
+                                <h2 class="section-title">PT Perta Samtan Gas</h2>
+                                <p class="about-short-desc" data-i18n="about_short">Perusahaan pengolahan gas bumi terintegrasi yang berkomitmen mendukung ketahanan energi nasional secara berkelanjutan.</p>
+                            </div>
+
+                            <div class="vm-wrapper reveal fade-up delay-100">
+                                <div class="vm-group">
+                                    <h4 class="vm-section-title" data-i18n="about_visimisi">VISI DAN MISI</h4> 
+                                    
+                                    <div class="vm-grid">
+                                        <div class="vm-card">
+                                            <div class="vm-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                            <div class="vm-text">
+                                                <h5 data-i18n="about_visi_title">VISI</h5>
+                                                <p data-i18n="about_visi_desc">Menjadi Perseroan Terkemuka di Dunia dalam Industri LPG & Gas</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="vm-card">
+                                            <div class="vm-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                            <div class="vm-text">
+                                                <h5 data-i18n="about_misi_title">MISI</h5>
+                                                <p data-i18n="about_misi_desc">Memberikan nilai tambah bagi Pemegang Saham, Karyawan, dan Masyarakat Indonesia melalui efisiensi kerja dan daya saing yang tinggi.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                <div class="vm-group" style="margin-top: 30px;">
+                                    <h4 class="vm-section-title" data-i18n="about_tujuan">TUJUAN & MAKSUD PERSEROAN</h4>
+                                    <div class="vm-grid">
+                                        <div class="vm-card">
+                                            <div class="vm-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                            <div class="vm-text">
+                                                <p data-i18n="about_t1">Ekstraksi dan pemrosesan gas alam menjadi LPG dan produk gas lainnya</p>
+                                            </div>
+                                        </div>
 
-                                <div class="vm-card">
-                                    <div class="vm-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="vm-text">
-                                        <h5 data-i18n="about_misi_title">MISI</h5>
-                                        <p data-i18n="about_misi_desc">Memberikan nilai tambah bagi Pemegang Saham, Karyawan, dan Masyarakat Indonesia melalui efisiensi kerja dan daya saing yang tinggi.</p>
+                                        <div class="vm-card">
+                                            <div class="vm-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                            <div class="vm-text">
+                                                <p data-i18n="about_t2">Niaga dan distribusi LPG untuk memenuhi program Public Service Obligation (PSO)</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="vm-card">
+                                            <div class="vm-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                            <div class="vm-text">
+                                                <p data-i18n="about_t3">Optimalisasi sumber daya dan fasilitas pemrosesan gas untuk layanan terbaik</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="vm-card">
+                                            <div class="vm-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                            <div class="vm-text">
+                                                <p data-i18n="about_t4">Penyediaan infrastruktur terkait sektor pemrosesan gas secara berkelanjutan</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="about-col-right">
+                        <div class="about-long-desc reveal fade-up">
+                            <p data-i18n="about_long1">PT Perta-Samtan Gas didirikan pada 7 Mei 2008 dengan tujuan memproduksi LPG (Liquified Petroleum Gas) guna mendukung program Pemerintah dalam rangka konversi minyak tanah ke LPG serta penyediaan energi bagi masyarakat, sekaligus mengurangi beban Pemerintah dalam subsidi BBM.</p>
+                            <br>
+                            <p data-i18n="about_long2">Perseroan bergerak dalam bisnis pengolahan gas serta menyediakan layanan jasa dan infrastruktur terkait Pemrosesan Gas dengan dua kilang terintegrasi di Prabumulih dan Banyuasin, Sumatera Selatan.</p>
                         </div>
                         
-                        <div class="vm-group" style="margin-top: 30px;">
-                            <h4 class="vm-section-title" data-i18n="about_tujuan">TUJUAN & MAKSUD PERSEROAN</h4>
-                            <div class="vm-grid">
-                                <div class="vm-card">
-                                    <div class="vm-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="vm-text">
-                                        <p data-i18n="about_t1">Ekstraksi dan pemrosesan gas alam menjadi LPG dan produk gas lainnya</p>
-                                    </div>
-                                </div>
-
-                                <div class="vm-card">
-                                    <div class="vm-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="vm-text">
-                                        <p data-i18n="about_t2">Niaga dan distribusi LPG untuk memenuhi program Public Service Obligation (PSO)</p>
-                                    </div>
-                                </div>
-
-                                <div class="vm-card">
-                                    <div class="vm-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="vm-text">
-                                        <p data-i18n="about_t3">Optimalisasi sumber daya dan fasilitas pemrosesan gas untuk layanan terbaik</p>
-                                    </div>
-                                </div>
-
-                                <div class="vm-card">
-                                    <div class="vm-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <div class="vm-text">
-                                        <p data-i18n="about_t4">Penyediaan infrastruktur terkait sektor pemrosesan gas secara berkelanjutan</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="about-image-wrapper reveal fade-up delay-100">
+                            <img src="assets/images/hero/about-image.jpeg" alt="Fasilitas Perta-Samtan Gas" class="about-img">
                         </div>
                     </div>
+
                 </div>
             </div>
 
-            <div class="about-col-right">
-                
-                <div class="about-long-desc reveal fade-up">
-                    <p data-i18n="about_long1">PT Perta-Samtan Gas didirikan pada 7 Mei 2008 dengan tujuan memproduksi LPG (Liquified Petroleum Gas) guna mendukung program Pemerintah dalam rangka konversi minyak tanah ke LPG serta penyediaan energi bagi masyarakat, sekaligus mengurangi beban Pemerintah dalam subsidi BBM.</p>
-                    <br>
-                    <p data-i18n="about_long2">Perseroan bergerak dalam bisnis pengolahan gas serta menyediakan layanan jasa dan infrastruktur terkait Pemrosesan Gas dengan dua kilang terintegrasi di Prabumulih dan Banyuasin, Sumatera Selatan.</p>
-                </div>
-                
-                <div class="about-image-wrapper reveal fade-up delay-100">
-                    <img src="assets/images/hero/about-image.jpeg" alt="Fasilitas Perta-Samtan Gas" class="about-img">
+            <!-- ============================================== -->
+            <!-- SLIDE 2: DEWAN DIREKSI                         -->
+            <!-- ============================================== -->
+            <div class="about-slide-item">
+                <div class="direksi-layout-wrapper">
+                    
+                    <div class="indicator-column">
+                        <span class="line-red"></span>
+                        <span class="number">02</span>
+                        <span class="line-faint"></span>
+                    </div>
+
+                    <div class="content-column" style="width: 100%;">
+                        
+                        <div class="direksi-header reveal fade-up">
+                            <h4 class="section-subtitle" data-i18n="dir_sub">STRUKTUR MANAJEMEN</h4>
+                            <h2 class="section-title" data-i18n="dir_title">Dewan Direksi</h2>
+                        </div>
+                        
+                        <div class="direksi-wrapper" style="padding-top: 0;">
+                            <div class="direksi-grid reveal fade-up delay-100">
+                                
+                                <div class="dir-card">
+                                    <div class="dir-slanted-bg"></div>
+                                    <img src="assets/images/leadership/director-1.png" alt="Presiden Direktur" class="dir-photo">
+                                    <span class="dir-vert-text pos-right" data-i18n="dir_1_label">DIREKTUR</span>
+                                    
+                                    <div class="dir-content">
+                                        <h3 class="dir-name">Jeffry H. Simanjutak</h3>
+                                        <p class="dir-title" data-i18n="dir_1_pos">Presiden Direktur</p>
+                                    </div>
+                                </div>
+
+                                <div class="dir-card">
+                                    <div class="dir-slanted-bg"></div>
+                                    <img src="assets/images/leadership/vice-director.png" alt="Wakil Presiden Direktur" class="dir-photo">
+                                    <span class="dir-vert-text pos-right" data-i18n="dir_2_label">WAKIL DIREKTUR</span>
+                                    
+                                    <div class="dir-content">
+                                        <h3 class="dir-name">Roger I. K. Park</h3>
+                                        <p class="dir-title" data-i18n="dir_2_pos">Wakil Presiden Direktur</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -726,7 +791,8 @@
         </div>
     </section>
 
-    <section class="award-slider-section" id="awards">
+    <!-- Tambahan animasi reveal fade-up di section utama -->
+    <section class="award-slider-section reveal fade-up" id="awards">
         <!-- Background Gambar Besar -->
         <div class="as-background">
             <img src="" id="as-bg-img" alt="Background Penghargaan">
@@ -734,8 +800,8 @@
         </div>
 
         <div class="as-container">
-            <!-- Bagian Kiri: Teks -->
-            <div class="as-text-area">
+            <!-- Bagian Kiri: Teks (Animasi masuk dari kiri ke kanan) -->
+            <div class="as-text-area reveal fade-right delay-100">
                 <span class="as-subtitle" data-i18n="aw_sub">PENGHARGAAN & PENGAKUAN</span>
                 <h2 class="as-title" id="as-title">Memuat...</h2>
                 <p class="as-desc" id="as-desc">Memuat deskripsi penghargaan...</p>
@@ -746,16 +812,16 @@
                 </div>
             </div>
 
-            <!-- Bagian Kanan: Carousel Card -->
-            <div class="as-carousel-area" id="as-scroll-area">
+            <!-- Bagian Kanan: Carousel Card (Animasi masuk dari kanan ke kiri) -->
+            <div class="as-carousel-area reveal fade-left delay-200" id="as-scroll-area">
                 <div class="as-track" id="as-track">
                     <!-- Kotak-kotak (Cards) akan otomatis dimunculkan oleh JavaScript di sini -->
                 </div>
             </div>
         </div>
 
-        <!-- Angka Indikator di Pojok Kanan Bawah -->
-        <div class="as-counter" id="as-counter">01</div>
+        <!-- Angka Indikator (Animasi nge-zoom dari tengah) -->
+        <div class="as-counter reveal zoom-in delay-300" id="as-counter">01</div>
     </section>
 
     <section id="kontribusi" class="kontribusi-section">

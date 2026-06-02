@@ -29,6 +29,12 @@ const translations = {
         "about_t4": "Penyediaan infrastruktur terkait sektor pemrosesan gas secara berkelanjutan",
         "about_long1": "PT Perta-Samtan Gas didirikan pada 7 Mei 2008 dengan tujuan memproduksi LPG (Liquified Petroleum Gas) guna mendukung program Pemerintah dalam rangka konversi minyak tanah ke LPG serta penyediaan energi bagi masyarakat, sekaligus mengurangi beban Pemerintah dalam subsidi BBM.",
         "about_long2": "Perseroan bergerak dalam bisnis pengolahan gas serta menyediakan layanan jasa dan infrastruktur terkait Pemrosesan Gas dengan dua kilang terintegrasi di Prabumulih dan Banyuasin, Sumatera Selatan.",
+        "dir_sub": "STRUKTUR MANAJEMEN",
+        "dir_title": "Dewan Direksi",
+        "dir_1_pos": "Presiden Direktur",
+        "dir_2_pos": "Wakil Presiden Direktur",
+        "dir_1_label": "DIREKTUR",
+        "dir_2_label": "WAKIL DIREKTUR",
 
         // Process Section
         "proc_sub": "PROSES BISNIS",
@@ -185,7 +191,13 @@ const translations = {
         "about_t4": "Sustainable provision of infrastructure related to the gas processing sector",
         "about_long1": "PT Perta-Samtan Gas was established on May 7, 2008, aimed at producing LPG (Liquified Petroleum Gas) to support the Government's program in converting kerosene to LPG and providing energy for the community, while reducing the Government's fuel subsidy burden.",
         "about_long2": "The company operates in the gas processing business and provides services and infrastructure related to Gas Processing with two integrated refineries in Prabumulih and Banyuasin, South Sumatra.",
-
+        "dir_sub": "MANAGEMENT STRUCTURE",
+        "dir_title": "Board of Directors",
+        "dir_1_pos": "President Director",
+        "dir_2_pos": "Vice President Director",
+        "dir_1_label": "DIRECTOR",
+        "dir_2_label": "VICE DIRECTOR",
+        
         // Process Section
         "proc_sub": "BUSINESS PROCESS",
         "proc_title": "MAIN BUSINESS PROCESS",

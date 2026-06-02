@@ -18,7 +18,6 @@ window.addEventListener('scroll', function() {
 });
 
 // --- SLIDER HERO SECTION ---
-// --- SLIDER HERO SECTION ---
 const slides = [
     {
         title: { id: "Ketahanan Energi LPG", en: "LPG Energy Security" },
@@ -121,6 +120,63 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Panggil fungsi dengan index 0
     changeSlide(currentSlideIndex);
+});
+
+
+/* ========================= */
+/* SLIDER ABOUT & DEWAN DIREKSI (WITH AUTO-SLIDE) */
+/* ========================= */
+let aboutSlideIndex = 0;
+let aboutSlideTimer;
+
+function switchAboutSlide(index) {
+    const slides = document.querySelectorAll('.about-slide-item');
+    const dots = document.querySelectorAll('.a-dot');
+    
+    if (!slides.length || !dots.length) return; // Cegah error kalau elemen nggak ketemu
+
+    // Hapus class 'active' dari semua slide dan titik
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Tambahkan class 'active' ke elemen yang dituju
+    aboutSlideIndex = index;
+    slides[aboutSlideIndex].classList.add('active');
+    dots[aboutSlideIndex].classList.add('active');
+
+    // Mengakali animasi 'reveal' agar jalan ulang saat ganti slide
+    const reveals = slides[aboutSlideIndex].querySelectorAll('.reveal');
+    reveals.forEach(el => {
+        el.classList.remove('active');
+        setTimeout(() => el.classList.add('active'), 50);
+    });
+
+    // Reset timer setiap kali diklik manual agar tidak bentrok
+    resetAboutSlideTimer();
+}
+
+function nextAboutSlide() {
+    const slides = document.querySelectorAll('.about-slide-item');
+    if (!slides.length) return;
+    
+    let nextIndex = aboutSlideIndex + 1;
+    if (nextIndex >= slides.length) {
+        nextIndex = 0; // Balik ke slide pertama
+    }
+    switchAboutSlide(nextIndex);
+}
+
+function resetAboutSlideTimer() {
+    clearInterval(aboutSlideTimer);
+    // Auto-slide per 8 detik (8000 ms)
+    aboutSlideTimer = setInterval(nextAboutSlide, 5000); 
+}
+
+// Jalankan timer saat halaman pertama kali dimuat
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById('about-track')) {
+        resetAboutSlideTimer();
+    }
 });
 
 /* ========================= */
