@@ -285,6 +285,107 @@ html, body {
     .aw-right {
         width: 100% !important;
     }
+
+    .about-slider-track {
+        display: block !important; 
+        position: relative !important;
+    }
+    
+    .about-slide-item {
+        position: absolute !important; /* Slide mati melayang biar gak bikin gap */
+        top: 0; left: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .about-slide-item.active {
+        position: relative !important; /* Cuma slide aktif yang makan tempat */
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .direksi-layout-wrapper {
+        flex-direction: column !important; 
+        gap: 30px !important;
+    }
+    
+    .direksi-header {
+        text-align: center !important; /* Judul kita taruh tengah aja biar seimbang sama kotaknya */
+    }
+    
+    .direksi-grid {
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 650px !important; /* <--- KUNCI SAKTI: Kandangin area zig-zag maksimal 650px */
+        margin: 0 auto !important; /* <--- Taruh kandangnya pas di tengah layar */
+        gap: 20px !important; /* <--- Jarak atas-bawah kita rapetin dikit dari 40px ke 20px */
+        display: flex !important;
+    }
+    
+    .dir-card {
+        width: 100% !important;
+        max-width: 340px !important; 
+        height: 480px !important;
+    }
+
+    /* KOTAK 1: DIREKTUR (KIRI TAPI DI TENGAH) */
+    .dir-card:nth-child(1) {
+        align-self: flex-start !important; 
+    }
+
+    /* KOTAK 2: WAKIL DIREKTUR (KANAN TAPI DI TENGAH) */
+    .dir-card:nth-child(2) {
+        align-self: flex-end !important; 
+        margin-top: -40px !important; /* <--- Trik biar wakil agak naik dikit nyalip kotaknya direktur (lebih dinamis) */
+    }
+    
+    .dir-photo {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .direksi-layout-wrapper,
+    .about-col-left {
+        display: flex !important;
+        flex-direction: row !important; /* Paksa menyamping, jangan numpuk! */
+        align-items: stretch !important; /* Biar garis tipisnya bisa memanjang ke bawah */
+        gap: 25px !important; 
+    }
+    
+    /* 2. Matikan efek bawaan 992px yang bikin layout jebol */
+    .content-column {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 3. Indikator dipinggir kiri */
+    .indicator-column {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 30px !important; /* Kunci lebar biar dia tetap nempel rapi di pinggir */
+        margin-bottom: 0 !important; 
+    }
+
+    /* 4. Hidupkan lagi garis tipis ke bawah biar mirip gambar 1 */
+    .indicator-column .line-faint {
+        display: block !important;
+        width: 1px !important;
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        flex-grow: 1 !important; 
+        min-height: 50px !important;
+    }
+    
+    /* Warna garis tipis untuk Light Mode */
+    body.light-mode .indicator-column .line-faint {
+        background-color: rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* 5. Pastikan teks judul kembali rata kiri */
+    .about-header,
+    .direksi-header {
+        text-align: left !important;
+    }
 }
 
 /* ========================================= */
@@ -349,10 +450,6 @@ html, body {
     .aw-left, .aw-right, .k-info, .k-display, .m3-timeline-nav, .m3-content-display {
         width: 100%;
         padding-left: 0;
-    }
-
-    .indicator-column {
-        display: none;
     }
 
     /* Penyesuaian Margin & Posisi */
@@ -1346,6 +1443,8 @@ html, body {
         bottom: 15px !important;
     }
 
+    
+
 
     /* ========================================= */
     /* FIX KONTRIBUSI: SEMBUNYIKAN PARAGRAF DI HP*/
@@ -1612,8 +1711,39 @@ html, body {
         height: 40px !important;
         display: block !important;
     }
-
     
+    .direksi-layout-wrapper {
+        flex-direction: column !important; /* Paksa numpuk atas-bawah */
+        gap: 20px !important;
+    }
+    
+    .direksi-header {
+        text-align: center !important; /* Judul ke tengahin biar cakep */
+    }
+    
+    .direksi-grid {
+        flex-direction: column !important; /* Kotak direktur numpuk bawah */
+        align-items: center !important;
+        gap: 40px !important;
+    }
+    
+    .dir-card {
+        width: 100% !important;
+        max-width: 340px !important; /* Kunci ukuran biar pas di layar HP */
+        height: 480px !important;
+        margin: 0 auto !important; /* Pastikan dia nengah */
+    }
+    
+    .dir-slanted-bg {
+        left: 20px !important;
+        right: 20px !important;
+        height: 75% !important;
+    }
+    
+    .dir-photo {
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Kunci mati foto tepat di tengah */
+    }
 }
 
 
@@ -1648,6 +1778,14 @@ html, body {
     .fasilitas-container { padding-left: 0; }
     .fac-content { padding: 30px 20px; }
     .fac-name { font-size: 1.8rem; }
+
+    .dir-card:nth-child(1),
+    .dir-card:nth-child(2) {
+        align-self: center !important; /* Balik ke tengah */
+    }
+    .direksi-header {
+        text-align: center !important;
+    }
 }
 
 /* 1. HARAM MUNCUL DI LAPTOP / DESKTOP */
@@ -1815,5 +1953,181 @@ html, body {
     /* 5. Kurangi padding navbar sedikit biar ruangnya lebih lega */
     .nav-container {
         padding: 15px 3% !important; 
+    }
+}
+
+/* ======================================================== */
+/* PENAWAR FINAL: FIX ABOUT 992px & HAPUS INDIKATOR DI HP   */
+/* ======================================================== */
+
+/* 1. Mencegah About Slide 1 hancur di 1024px & 992px */
+@media (max-width: 1024px) {
+    /* Membunuh "display: contents" bawaan yang bikin layout tumpah ruah */
+    .about-col-left, 
+    .about-col-right, 
+    .content-column {
+        display: flex !important; 
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    /* Khusus kolom kiri kita paksa nyamping (Indikator Kiri - Teks Kanan) */
+    .about-col-left,
+    .direksi-layout-wrapper {
+        flex-direction: row !important;
+        align-items: stretch !important;
+        gap: 25px !important;
+    }
+}
+
+/* 2. Sembunyikan Indikator Kiri khusus di HP (768px ke bawah) */
+@media (max-width: 768px) {
+    .indicator-column {
+        display: none !important; /* Hilang total tak berbekas! */
+    }
+
+    /* Karena indikator hilang, bungkusannya kita rapikan lagi jadi numpuk vertikal */
+    .about-col-left,
+    .direksi-layout-wrapper {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    .about-header,
+    .direksi-header {
+        text-align: center !important; /* Teks judul balik nengah biar cakep di HP */
+    }
+}
+
+/* ======================================================== */
+/* JURUS FINAL: FIX ABOUT 992px & MOBILE (JUSTIFY + MARGIN) */
+/* ======================================================== */
+
+@media (max-width: 992px) {
+    /* 1. Sembunyikan Indikator Kiri (02) di ukuran 992px ke bawah */
+    .about-slide-item .indicator-column {
+        display: none !important;
+    }
+
+    /* Karena indikator hilang, kembalikan bungkusan ke mode vertikal */
+    .about-col-left {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 2. Teks di bawah "PT Perta Samtan Gas" di-Justify biar rapi kotak */
+    .about-short-desc {
+        text-align: justify !important;
+        margin-bottom: 5px !important; /* KUNCI SAKTI: Membatalkan margin -30px yang bikin teks tabrakan */
+        padding: 0 5px !important; /* Tambah jarak kiri-kanan dikit biar gak terlalu mentok layar */
+    }
+
+    /* 3. Pastikan Judul Visi Misi punya jarak aman dari teks di atasnya */
+    .vm-wrapper {
+        margin-top: 10px !important; 
+    }
+}
+
+/* ======================================================== */
+/* JURUS SAPU BERSIH: HAPUS INDIKATOR 03 & 04 (992px & HP)  */
+/* ======================================================== */
+
+@media (max-width: 992px) {
+    /* Sembunyikan Indikator 04 di Fasilitas & 03 di Proses Bisnis */
+    .fasilitas-header .indicator-left,
+    .process-header .indicator-right {
+        display: none !important; /* Hilang total tak berbekas! */
+    }
+
+    /* Tarik sedikit judulnya ke atas biar nggak ada sisa ruang kosong */
+    .fasilitas-header, 
+    .process-header {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* ======================================================== */
+/* REVISI FINAL: ABOUT RATA KIRI & FASILITAS BANYUASIN KANAN*/
+/* ======================================================== */
+
+@media (max-width: 992px) {
+    /* 1. Teks About Us & Subjudul dikembalikan Rata Kiri */
+    .about-header,
+    .about-short-desc {
+        text-align: left !important;
+    }
+
+    /* Pastikan paragraf punya jarak aman dan tidak nabrak */
+    .about-short-desc {
+        margin-bottom: 25px !important;
+        padding: 0 !important; /* Hapus padding sisa agar lurus dengan judul */
+    }
+
+    /* 2. Kilang Fraksinasi Banyuasin (02) - Tarik Stats ke Ujung Kanan */
+    .right-align .fac-content {
+        align-items: flex-end !important; /* Dorong seluruh konten ke kanan */
+        text-align: right !important;
+    }
+
+    .right-align .fac-stats {
+        display: flex !important;
+        flex-direction: column !important; /* Susun kotak ke bawah (vertikal) */
+        align-items: flex-end !important; /* Dorong kotak ke ujung kanan layar */
+        width: 100% !important;
+    }
+
+    .right-align .stat-box {
+        width: max-content !important; /* Kotak seukuran teks saja, tidak full 100% */
+        flex-direction: row-reverse !important; /* Keren nih: Posisikan Icon Tetesan Air di kanan, teks di kiri */
+        text-align: right !important;
+    }
+
+    .right-align .stat-label {
+        text-align: right !important;
+    }
+
+    /* 3. Kilang Ekstraksi Prabumulih (01) - Tarik Stats ke Ujung Kiri */
+    .left-align .fac-content {
+        align-items: flex-start !important; 
+        text-align: left !important;
+    }
+
+    .left-align .fac-stats {
+        display: flex !important;
+        flex-direction: column !important; /* Numpuk ke bawah */
+        align-items: flex-start !important; /* Dorong semua kotak ke ujung kiri */
+        width: 100% !important;
+    }
+
+    .left-align .stat-box,
+    .left-align .stat-box-small {
+        width: max-content !important; /* Kotaknya dipendekin seukuran teks aja, gak full layar */
+        justify-content: flex-start !important; 
+        text-align: left !important;
+    }
+}
+
+/* ======================================================== */
+/* KEMBALIKAN KE MODE FLEKSIBEL (BIAR GAP HILANG)           */
+/* ======================================================== */
+@media (max-width: 1024px) {
+    .about-slider-track {
+        display: block !important; 
+        position: relative !important;
+    }
+    
+    .about-slide-item {
+        position: absolute !important; 
+        top: 0; left: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .about-slide-item.active {
+        position: relative !important; /* Tinggi kontainer ngikutin slide yang aktif aja */
+        visibility: visible;
+        opacity: 1;
+        z-index: 2;
     }
 }

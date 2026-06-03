@@ -46,3 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/* ======================================================== */
+/* MENCEGAH SLIDER ABOUT JOGET DI HP (PENCEGAT MAIN.JS)     */
+/* ======================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Kita simpan fungsi asli yang ada di main.js
+    const fungsiAsliNextSlide = window.nextAboutSlide;
+    
+    // 2. Kita timpa (hijack) fungsinya dari responsive.js
+    if (typeof fungsiAsliNextSlide === 'function') {
+        window.nextAboutSlide = function() {
+            // Kalau layarnya 1024px ke bawah (HP/Tablet), STOP! Jangan geser.
+            if (window.innerWidth <= 1024) {
+                return;
+            }
+            // Kalau di Laptop, jalankan fungsi aslinya seperti biasa
+            fungsiAsliNextSlide();
+        };
+    }
+});
