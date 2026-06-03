@@ -990,7 +990,6 @@ body {
     color: white;
     text-align: center;
     position: relative;
-    margin-bottom: 60px;
 }
 
 /* Header & Indikator Kiri */
@@ -1003,11 +1002,10 @@ body {
 .indicator-left {
     position: absolute;
     left: 6%; /* Sesuaikan biar pas di kiri, bisa diatur 5% - 15% */
-    top: 0;
+    top: -1%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
 
 .indicator-left .line-red-top {
@@ -1102,7 +1100,7 @@ body {
     position: relative;
     z-index: 2;
     padding: 50px;
-    max-width: 60%;
+    max-width: 65%; /* <--- Tadi 60%, saya besarin jadi 65% biar ruangannya lebih lega */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2797,8 +2795,7 @@ body {
     width: 30px;
     height: 2px;
     background-color: #00A2E9; /* Biru Pertamina */
-    margin-left: 30px;
-    margin-top: 8px;
+    margin-top: 0px;
 }
 
 .k-title {

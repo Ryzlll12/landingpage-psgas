@@ -58,6 +58,13 @@ const translations = {
         "fac_title": "FASILITAS OPERASIONAL",
         "fac_1_desc": "Fasilitas ekstraksi modern untuk memisahkan komponen NGL dari gas alam dengan teknologi cryogenic dan refrigeration terintegrasi.",
         "fac_2_desc": "Fasilitas fraksinasi terintegrasi untuk menghasilkan produk LPG, Propane, Butane, dan Kondensat dengan standar kualitas tinggi.",
+        "fac_1_title": "KILANG EKSTRAKSI PRABUMULIH",
+        "fac_1_stat1": "KAPASITAS GAS UMPAN",
+        "fac_1_stat2": "Ekstraksi NGL",
+        "fac_1_stat3": "Sistem Terintegrasi",
+        "fac_2_title": "KILANG FRAKSINASI BANYUASIN",
+        "fac_2_stat1": "PRODUKSI LPG",
+        "fac_2_stat2": "KONDENSAT", 
 
         // Output (Sudah Mas siapkan atributnya di HTML)
         "out_sub": "Output Produksi",
@@ -220,6 +227,14 @@ const translations = {
         "fac_title": "OPERATIONAL FACILITIES",
         "fac_1_desc": "Modern extraction facilities to separate NGL components from natural gas with integrated cryogenic and refrigeration technology.",
         "fac_2_desc": "Integrated fractionation facilities to produce high-quality standard LPG, Propane, Butane, and Condensate products.",
+        "fac_1_title": "KILANG EKSTRAKSI PRABUMULIH",
+        "fac_1_title": "PRABUMULIH EXTRACTION PLANT",
+        "fac_1_stat1": "FEED GAS CAPACITY",
+        "fac_1_stat2": "NGL Extraction",
+        "fac_1_stat3": "Integrated System",
+        "fac_2_title": "BANYUASIN FRACTIONATION PLANT",
+        "fac_2_stat1": "LPG PRODUCTION",
+        "fac_2_stat2": "CONDENSATE",
 
         // Output
         "out_sub": "Production Output",

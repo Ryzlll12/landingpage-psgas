@@ -281,75 +281,79 @@ advantageItems.forEach((item) => {
 /* AWARDS SLIDER (VIDEO STYLE) */
 /* ========================= */
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Data 11 Penghargaan
+    // 1. Data 11 Penghargaan (Lengkap dengan ID & EN)
     const awardsData = [
         {
-            title: "Program Kampung Iklim Sumatera Selatan",
-            desc: "Penghargaan Program Kampung Iklim sebagai pengakuan kontribusi pengelolaan lingkungan dan iklim.",
-            cardImg: "assets/images/penghargaan/certificate-1.jpeg", // Ganti dengan path foto sertifikat
-            bgImg: "assets/images/penghargaan/bg-1.png"       // Ganti dengan path foto background
+            title: { id: "Program Kampung Iklim Sumatera Selatan", en: "South Sumatra Climate Village Program" },
+            desc: { id: "Penghargaan Program Kampung Iklim sebagai pengakuan kontribusi pengelolaan lingkungan dan iklim.", en: "Climate Village Program award in recognition of contributions to environmental and climate management." },
+            cardImg: "assets/images/penghargaan/certificate-1.jpeg",
+            bgImg: "assets/images/penghargaan/bg-1.png"
         },
         {
-            title: "Bantuan Angkutan Sampah",
-            desc: "Sertifikat penghargaan atas program bantuan angkutan sampah di sekitar area operasional.",
+            title: { id: "Bantuan Angkutan Sampah", en: "Waste Transport Assistance" },
+            desc: { id: "Sertifikat penghargaan atas program bantuan angkutan sampah di sekitar area operasional.", en: "Certificate of appreciation for the waste transport assistance program around the operational area." },
             cardImg: "assets/images/penghargaan/certificate-2.jpeg",
             bgImg: "assets/images/penghargaan/bg-2.png"
         },
         {
-            title: "Community Development",
-            desc: "Sertifikat pengakuan kegiatan pengembangan masyarakat dan tanggung jawab sosial perusahaan.",
+            title: { id: "Community Development", en: "Community Development" },
+            desc: { id: "Sertifikat pengakuan kegiatan pengembangan masyarakat dan tanggung jawab sosial perusahaan.", en: "Certificate of recognition for community development activities and corporate social responsibility." },
             cardImg: "assets/images/penghargaan/certificate-3.jpeg",
             bgImg: "assets/images/penghargaan/bg-3.png"
         },
         {
-            title: "Ecosystem Protection",
-            desc: "Sertifikat atas komitmen perlindungan ekosistem dan lingkungan di wilayah operasi.",
+            title: { id: "Ecosystem Protection", en: "Ecosystem Protection" },
+            desc: { id: "Sertifikat atas komitmen perlindungan ekosistem dan lingkungan di wilayah operasi.", en: "Certificate for the commitment to ecosystem and environmental protection in the operational area." },
             cardImg: "assets/images/penghargaan/certificate-4.jpeg",
             bgImg: "assets/images/penghargaan/bg-4.png"
         },
         {
-            title: "Hari Peduli Sampah",
-            desc: "Sertifikat keikutsertaan dan dukungan program Hari Peduli Sampah Nasional.",
+            title: { id: "Hari Peduli Sampah", en: "National Waste Awareness Day" },
+            desc: { id: "Sertifikat keikutsertaan dan dukungan program Hari Peduli Sampah Nasional.", en: "Certificate of participation and support for the National Waste Awareness Day program." },
             cardImg: "assets/images/penghargaan/certificate-5.jpeg",
             bgImg: "assets/images/penghargaan/bg-5.png"
         },
         {
-            title: "Keselamatan Minyak dan Gas Bumi",
-            desc: "Sertifikat keselamatan operasi minyak dan gas bumi di fasilitas pengolahan gas.",
+            title: { id: "Keselamatan Minyak dan Gas Bumi", en: "Oil and Gas Safety" },
+            desc: { id: "Sertifikat keselamatan operasi minyak dan gas bumi di fasilitas pengolahan gas.", en: "Certificate of oil and gas operational safety at the gas processing facility." },
             cardImg: "assets/images/penghargaan/certificate-6.jpeg",
             bgImg: "assets/images/penghargaan/bg-6.png"
         },
         {
-            title: "ISO 9001",
-            desc: "Sertifikasi ISO 9001 — sistem manajemen mutu terstandar internasional.",
+            title: { id: "ISO 9001", en: "ISO 9001" },
+            desc: { id: "Sertifikasi ISO 9001 — sistem manajemen mutu terstandar internasional.", en: "ISO 9001 Certification — internationally standardized quality management system." },
             cardImg: "assets/images/penghargaan/certificate-7.jpg",
             bgImg: "assets/images/penghargaan/bg-7.png"
         },
         {
-            title: "ISO 14001",
-            desc: "Sertifikasi ISO 14001 — sistem manajemen lingkungan berkelanjutan.",
+            title: { id: "ISO 14001", en: "ISO 14001" },
+            desc: { id: "Sertifikasi ISO 14001 — sistem manajemen lingkungan berkelanjutan.", en: "ISO 14001 Certification — sustainable environmental management system." },
             cardImg: "assets/images/penghargaan/certificate-8.jpg",
             bgImg: "assets/images/penghargaan/bg-8.png"
         },
         {
-            title: "ISO 45001",
-            desc: "Sertifikasi sistem manajemen keselamatan dan kesehatan kerja (K3).",
+            title: { id: "ISO 45001", en: "ISO 45001" },
+            desc: { id: "Sertifikasi sistem manajemen keselamatan dan kesehatan kerja (K3).", en: "Certification of occupational health and safety (OHS) management system." },
             cardImg: "assets/images/penghargaan/certificate-9.jpeg",
             bgImg: "assets/images/penghargaan/bg-9.png"
         },
         {
-            title: "Akreditasi",
-            desc: "Sertifikat akreditasi atas standar operasional dan pengelolaan fasilitas perusahaan.",
+            title: { id: "Akreditasi", en: "Accreditation" },
+            desc: { id: "Sertifikat akreditasi atas standar operasional dan pengelolaan fasilitas perusahaan.", en: "Accreditation certificate for the company's operational and facility management standards." },
             cardImg: "assets/images/penghargaan/certificate-10.jpeg",
             bgImg: "assets/images/penghargaan/bg-10.png"
         },
         {
-            title: "Sistem Manajemen Kesehatan Kerja",
-            desc: "Sertifikat sistem manajemen dan kesehatan kerja di lingkungan operasional Perseroan.",
+            title: { id: "Sistem Manajemen Kesehatan Kerja", en: "Occupational Health Management System" },
+            desc: { id: "Sertifikat sistem manajemen dan kesehatan kerja di lingkungan operasional Perseroan.", en: "Certificate of occupational health and management system in the Company's operational environment." },
             cardImg: "assets/images/penghargaan/certificate-11.jpeg",
             bgImg: "assets/images/penghargaan/bg-11.png"
         }
     ];
+
+    // Simpan ke variabel window biar bisa dipanggil saat tombol bahasa diklik
+    window.awardsDataGlobal = awardsData;
+    window.currentAwardIndex = 0;
 
     const track = document.getElementById('as-track');
     const bgImg = document.getElementById('as-bg-img');
@@ -360,22 +364,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(!track) return;
 
-    let currentAwardIndex = 0;
-
     // 2. Generate Kotak (Cards) ke dalam HTML
     awardsData.forEach((award, index) => {
+        const curLang = localStorage.getItem('selectedLang') || 'id';
         const card = document.createElement('div');
         card.className = `as-card ${index === 0 ? 'active' : ''}`;
         card.setAttribute('data-index', index);
         card.innerHTML = `
-            <img src="${award.cardImg}" alt="${award.title}">
+            <img src="${award.cardImg}" alt="Certificate">
             <div class="as-card-overlay"></div>
             <div class="as-card-text">
-                <h4>${award.title}</h4>
+                <h4 class="card-award-title">${award.title[curLang]}</h4>
             </div>
         `;
         
-        // Fungsi klik pada Card
         card.addEventListener('click', () => {
             updateAwardDisplay(index);
         });
@@ -385,62 +387,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cards = document.querySelectorAll('.as-card');
 
-    // 3. Fungsi Update Tampilan (Teks & Background)
+    // 3. Fungsi Update Tampilan
     window.updateAwardDisplay = function(index) {
-        // FIX MASALAH 1: Pastikan looping kembali ke 1 (atau mundur ke 11) jalan lancar
         if(index < 0) {
             index = awardsData.length - 1;
         } else if(index >= awardsData.length) {
             index = 0;
         }
         
-        currentAwardIndex = index;
-        const data = awardsData[currentAwardIndex];
+        window.currentAwardIndex = index;
+        const data = awardsData[window.currentAwardIndex];
+        const curLang = localStorage.getItem('selectedLang') || 'id';
 
-        // Efek Pudar Background
         bgImg.style.opacity = 0;
         titleEl.style.opacity = 0;
         descEl.style.opacity = 0;
 
         setTimeout(() => {
             bgImg.src = data.bgImg;
-            titleEl.innerText = data.title;
-            descEl.innerText = data.desc;
-            counterEl.innerText = (currentAwardIndex + 1).toString().padStart(2, '0');
+            titleEl.innerText = data.title[curLang]; // Ambil data bahasa
+            descEl.innerText = data.desc[curLang]; // Ambil data bahasa
+            counterEl.innerText = (window.currentAwardIndex + 1).toString().padStart(2, '0');
             
             bgImg.style.opacity = 1;
             titleEl.style.opacity = 1;
             descEl.style.opacity = 1;
         }, 300);
 
-        // Update Class Active pada Card
         cards.forEach((c, i) => {
-            c.classList.toggle('active', i === currentAwardIndex);
+            c.classList.toggle('active', i === window.currentAwardIndex);
         });
 
-        // FIX MASALAH 3 (NGUMPET DI KIRI): 
-        // Rumus Anti Kebablasan - Hitung jarak murni antara kartu dengan wadah tempat dia berada
-        const activeCard = cards[currentAwardIndex];
+        const activeCard = cards[window.currentAwardIndex];
         const offsetKiriTrack = track.getBoundingClientRect().left;
         const offsetKiriKartu = activeCard.getBoundingClientRect().left;
-        
-        // Hasilnya dikurangi 30px biar ada sedikit ruang / bantalan di sisi kiri
         const scrollTarget = (offsetKiriKartu - offsetKiriTrack) - 30; 
         
         scrollArea.scrollTo({ left: scrollTarget, behavior: 'smooth' });
-
-        // Reset timer auto-play setiap kali slide berganti
-        resetAwardTimer();
     };
 
-    // Fungsi Tombol Prev & Next
-    window.nextAward = function() { updateAwardDisplay(currentAwardIndex + 1); };
-    window.prevAward = function() { updateAwardDisplay(currentAwardIndex - 1); };
+    window.nextAward = function() { updateAwardDisplay(window.currentAwardIndex + 1); };
+    window.prevAward = function() { updateAwardDisplay(window.currentAwardIndex - 1); };
 
-    // Inisialisasi awal
     updateAwardDisplay(0);
 
-    // 4. Fungsi Drag/Geser dengan Mouse (Opsional, biar makin mirip video)
+    // 4. Drag/Geser Mouse
     let isDown = false;
     let startX, scrollLeft;
 
@@ -681,10 +672,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('languageChanged', (e) => {
-    // Render ulang slider hero dan kontribusi dengan bahasa baru
+    // Render ulang slider hero dengan bahasa baru
     changeSlide(currentSlideIndex);
+    
+    // Render ulang section Kontribusi
     if(document.getElementById('kontribusi')) {
+        // 1. Update teks besar yang sedang aktif
         setKontribusi(currentKIndex);
+        
+        // 2. KUNCI SAKTI: Update semua teks thumbnail kecil di bawah
+        const curLang = localStorage.getItem('selectedLang') || 'id';
+        const thumbTitles = document.querySelectorAll('.k-thumb h4');
+        
+        thumbTitles.forEach((h4, idx) => {
+            // Cocokkan urutan thumbnail dengan data array kontribusiData
+            if(kontribusiData[idx]) {
+                h4.innerText = kontribusiData[idx].title[curLang];
+            }
+        });
+    }
+    
+    // Render ulang teks Awards (Penghargaan)
+    if(document.getElementById('as-track') && window.awardsDataGlobal) {
+        const curLang = localStorage.getItem('selectedLang') || 'id';
+        
+        // 1. Update judul & deskripsi besar
+        updateAwardDisplay(window.currentAwardIndex);
+        
+        // 2. Update semua judul di dalam kotak-kotak (Cards)
+        document.querySelectorAll('.card-award-title').forEach((h4, idx) => {
+            if(window.awardsDataGlobal[idx]) {
+                h4.innerText = window.awardsDataGlobal[idx].title[curLang];
+            }
+        });
     }
 });
 
